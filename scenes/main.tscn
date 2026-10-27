@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bi15aqkf8rg14"]
 
+[ext_resource type="PackedScene" uid="uid://b6hmojki7yfvp" path="res://scenes/target.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ceqtwms2l47j2" path="res://scenes/piece.tscn" id="1_o5qli"]
 
 [node name="Main" type="Node2D" unique_id=145891530]
@@ -10,11 +11,29 @@ offset_bottom = 1080.0
 mouse_filter = 2
 color = Color(0.59927607, 0.77629846, 0.90040123, 1)
 
-[node name="Piece" parent="." unique_id=739647865 instance=ExtResource("1_o5qli")]
+[node name="Target" parent="." unique_id=343642343 instance=ExtResource("1_0wfyh")]
+position = Vector2(1400, 250)
+color = Color(0.34497783, 0.54186606, 0.8665801, 1)
+
+[node name="Target2" parent="." unique_id=258928777 instance=ExtResource("1_0wfyh")]
+position = Vector2(1400, 540)
+color = Color(0.48353034, 0.83733886, 0.38589045, 1)
+
+[node name="Target3" parent="." unique_id=1647569148 instance=ExtResource("1_0wfyh")]
+position = Vector2(1400, 830)
+color = Color(0.80565715, 0.29179826, 0.3501592, 1)
+
+[node name="Piece" parent="." unique_id=739647865 node_paths=PackedStringArray("target") instance=ExtResource("1_o5qli")]
 color = Color(0.41003922, 0.47975188, 0.90671563, 1)
+target = NodePath("../Target")
+snap_distance = null
 
-[node name="Piece2" parent="." unique_id=1523132349 instance=ExtResource("1_o5qli")]
+[node name="Piece2" parent="." unique_id=1523132349 node_paths=PackedStringArray("target") instance=ExtResource("1_o5qli")]
 color = Color(0.5494481, 0.8266894, 0.312373, 1)
+target = NodePath("../Target2")
+snap_distance = null
 
-[node name="Piece3" parent="." unique_id=1323468272 instance=ExtResource("1_o5qli")]
+[node name="Piece3" parent="." unique_id=1323468272 node_paths=PackedStringArray("target") instance=ExtResource("1_o5qli")]
 color = Color(0.8431238, 0.1468887, 0.28344586, 1)
+target = NodePath("../Target3")
+snap_distance = null
